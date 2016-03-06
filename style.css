@@ -920,6 +920,7 @@ html[xmlns] .slider-wrap {display: block;}
 #header.transparent-header.floating-header.sticky-header .container {
 	width: 1170px;
 	padding: 0 15px;
+    background-image: url(images/top_bg.jpg);
 }
 
 #header.transparent-header + #slider,
@@ -1969,6 +1970,7 @@ body.top-search-open #side-panel-trigger { opacity: 0; }
 	width: 100%;
 	/*background-color: #FFF;*/
     background-color:transparent;
+    background-image: url(images/top_bg.jpg);
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -9605,6 +9607,19 @@ body:not(.device-touch) .clients-grid li a {
 }
 
 
+
+.about-icon-image { position: relative; text-align: center}
+
+.about-icon-image > a,
+.about-icon-image img {
+	display: block;
+	width: 70%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+
 /* ----------------------------------------------------------------
 	Team
 -----------------------------------------------------------------*/
@@ -9617,10 +9632,8 @@ body:not(.device-touch) .clients-grid li a {
 .team-image img {
 	display: block;
 	width: 70%;
-    margin-left:auto;
-    margin-right:auto;
-/*	height:300px;
-	width:400px; */
+	height:300px;
+	width:400px; 
 }
 
 .team-desc { text-align: center; }
