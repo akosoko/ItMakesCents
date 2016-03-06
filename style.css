@@ -9617,8 +9617,8 @@ body:not(.device-touch) .clients-grid li a {
 .team-image img {
 	display: block;
 	width: 70%;
-    margin-left:auto;
-    margin-right:auto;
+ /*   margin-left:auto;
+    margin-right:auto;*/
 /*	height:300px;
 	width:400px; */
 }
