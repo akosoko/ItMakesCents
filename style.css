@@ -9616,14 +9616,11 @@ body:not(.device-touch) .clients-grid li a {
 .team-image > a,
 .team-image img {
 	display: block;
-<<<<<<< HEAD
 	width: 70%;
     margin-left:auto;
     margin-right:auto;
-=======
-	height:300px;
-	width:400px;
->>>>>>> a4b0d585ac1f0a90bc86f4174744fc34cc297775
+/*	height:300px;
+	width:400px; */
 }
 
 .team-desc { text-align: center; }
