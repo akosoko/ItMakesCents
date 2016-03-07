@@ -218,22 +218,63 @@
                         <h1>My Profile</h1>
                     </div>                    
                     
-					<div class="row  bottommargin-sm">
+					<div class="row  center bottommargin-lg">
+                        <img src="images/student-profile-pic.jpg" alt="" style="width:40%;vertical-align:top"/>
                         
-                        <form>
-                        <input type="file" value="Browse"/>
+                        <div class="accordion accordion-border clearfix" data-active="4" style="width:30%;display:inline-block">
+
+                            <div class="acctitle mc"><img class="mc-acc-icon" src="images/profile-settings-acc-icon.png" style="" />Settings</div>
+                            <div class="acc_content clearfix"></div>
+
+                            <div class="acctitle mc"><img class="mc-acc-icon" src="images/profile-content-acc-icon.png" style="" />Content</div>
+                            <div class="acc_content clearfix" style="text-align:left">
                             
-<!--                        <input type="text" value=""/>-->
+                                1 PENDING MODERATOR APPROVAL <br><br>
+                                3 PENDING APPLES <br><br>
+                                1 PENDING PEER REVIEW
+                            
+                            </div>
+
+<!--
+                            <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-remove-circle"></i>Content</div>
+                            <div class="acc_content clearfix"></div>
+-->
+
+                            <div class="acctitle mc"><img class="mc-acc-icon" src="images/profile-settings-acc-icon.png" style="" />Upload</div>
+                            <div class="acc_content clearfix" style="text-align:left">
+                            
+                                <form>
+                                    Select a file to upload.<br>
+                                    <br>
+                                <input type="file" value="Browse"  style="height:70%;padding-right:10px"   />
+                                </form>
+                                <div id="dialog" title="File Upload">
+                                  <div class="progress-label">Starting upload...</div>
+                                  <div id="progressbar"></div>
+                                </div>
+                                <button id="uploadButton" class="button">Start Upload</button>   
                         
-                        </form>
-                    <div id="dialog" title="File Download">
-                      <div class="progress-label">Starting upload...</div>
-                      <div id="progressbar"></div>
-                    </div>
-                    <button id="uploadButton">Start Upload</button>                        
+                            </div>
 
-                    </div>
+                            <div class="acctitle mc"><img class="mc-acc-icon" src="images/profile-credit-acc-icon.png" style="" />Credits Earned</div>
+                            <div class="acc_content clearfix" style="text-align:left">
+                            
+                                <img src="images/star-icon.png" alt="star"/>
+                                <img src="images/star-icon.png" alt="star"/>
+                                <span style="margin-left:10px;">STARS</span><br>
 
+                                <img src="images/apple-icon.png" alt="apple"/>
+                                <img src="images/apple-icon.png" alt="apple"/>
+                                <img src="images/apple-icon.png" alt="apple"/>
+                                <span style="margin-left:10px;">APPLES</span><br><br>
+                                $10.00 Earned
+                            
+                            
+                            </div>
+                            
+                        </div>                        
+                    </div>
+                    <div class="container clearfix"></div>
 	            </div>
 
             </div>
