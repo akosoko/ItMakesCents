@@ -432,7 +432,7 @@ span.middot {
 
 .section {
 	position: relative;
-	margin: 60px 0;
+	margin: 00px 0;
 	padding: 60px 0;
 	background-color: #F9F9F9;
 	overflow: hidden;
@@ -11961,6 +11961,37 @@ body:not(.device-touch) .tagcloud a {
 }
 
 .widget .testimonial p { font-size: 14px; }
+
+
+div.test-image {
+    width:20%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.test-content hr {
+    border:1px solid #f38181;
+    margin:5px 5px;
+    width:15%;
+}
+
+div.test-content {
+    width:75%;
+    display: inline-block;
+    font-size:1.1em;
+    margin:5px 0px 0px 5px;
+    color:#444;
+}
+
+div.test-content .heading {
+    font-weight:bold;
+    font-size:1.3em;
+}
+
+div.test-image img {
+/*    width:20%;*/
+}
+
 
 
 /* Widget - Quick Contact Form
