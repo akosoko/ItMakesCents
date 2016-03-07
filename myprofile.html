@@ -20,12 +20,104 @@
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
+  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<!--    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
+  <style>
+      #progressbar {
+        margin-top: 20px;
+      }
 
+      .progress-label {
+        font-weight: bold;
+        text-shadow: 1px 1px 0 #fff;
+      }
+
+      .ui-dialog-titlebar-close {
+        display: none;
+      }
+  </style>    
+    
+    
 	<!-- External JavaScripts
 	============================================= -->
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+    <script>
+  $(function() {
+    var progressTimer,
+      progressbar = $( "#progressbar" ),
+      progressLabel = $( ".progress-label" ),
+      dialogButtons = [{
+        text: "Cancel Upload",
+        click: closeUpload
+      }],
+      dialog = $( "#dialog" ).dialog({
+        autoOpen: false,
+        closeOnEscape: false,
+        resizable: false,
+        buttons: dialogButtons,
+        open: function() {
+          progressTimer = setTimeout( progress, 2000 );
+        },
+        beforeClose: function() {
+          uploadButton.button( "option", {
+            disabled: false,
+            label: "Start Upload"
+          });
+        }
+      }),
+      uploadButton = $( "#uploadButton" )
+        .button()
+        .on( "click", function() {
+          $( this ).button( "option", {
+            disabled: true,
+            label: "Uploading..."
+          });
+          dialog.dialog( "open" );
+        });
+ 
+    progressbar.progressbar({
+      value: false,
+      change: function() {
+        progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+      },
+      complete: function() {
+        progressLabel.text( "Upload Complete!" );
+        dialog.dialog( "option", "buttons", [{
+          text: "Close",
+          click: closeUpload
+        }]);
+        $(".ui-dialog button").last().focus();
+      }
+    });
+ 
+    function progress() {
+      var val = progressbar.progressbar( "value" ) || 0;
+ 
+      progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+ 
+      if ( val <= 99 ) {
+        progressTimer = setTimeout( progress, 50 );
+      }
+    }
+ 
+    function closeUpload() {
+      clearTimeout( progressTimer );
+      dialog
+        .dialog( "option", "buttons", dialogButtons )
+        .dialog( "close" );
+      progressbar.progressbar( "value", false );
+      progressLabel
+        .text( "Starting upload..." );
+      uploadButton.focus();
+    }
+  });
+  </script>
+    
+    
 	<!-- Document Title
 	============================================= -->
 	<title>ItMakesCents | Learn: Math Monitizing Marketplace</title>
@@ -40,7 +132,7 @@
 
 		<!-- Header
 		============================================= -->
-		<header id="header" class="transparent-header full-header static-sticky" data-sticky-class="transparent">
+		<header id="header" class="transparent-header full-header static-sticky" data-sticky-class="transparent" style="background-image:url(images/top_bg.jpg)">
 
 			<div id="header-wrap">
 
@@ -111,15 +203,22 @@
 
 				<div class="container clearfix">
 
-					<div class="row topmargin-lg bottommargin-sm">
+					<div class="row  bottommargin-sm">
+                        <h1>My Profile</h1>
+                        
 
-
                         
+                        <form>
+                        <input type="file" value="Browse"/>
+                            
+<!--                        <input type="text" value=""/>-->
                         
-                        
-                        
-                        
-                        
+                        </form>
+                    <div id="dialog" title="File Download">
+                      <div class="progress-label">Starting upload...</div>
+                      <div id="progressbar"></div>
+                    </div>
+                    <button id="uploadButton">Start Upload</button>                        
 
                     </div>
 
