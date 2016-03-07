@@ -432,7 +432,7 @@ span.middot {
 
 .section {
 	position: relative;
-	margin: 60px 0;
+	margin: 00px 0;
 	padding: 60px 0;
 	background-color: #F9F9F9;
 	overflow: hidden;
@@ -9618,6 +9618,22 @@ body:not(.device-touch) .clients-grid li a {
     margin-right:auto;
 }
 
+.about-icon-image h1, h2 {
+    margin-bottom:0px !important;
+}
+
+.about-image img {
+	display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.mc-home-icon {
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:15px;
+    
+}
 
 
 /* ----------------------------------------------------------------
@@ -10859,6 +10875,10 @@ label.error { display: none !important; }
 /* Heading Block - with Subtitle
 -----------------------------------------------------------------*/
 
+div#about .heading-block {
+    margin-bottom:20px !important;
+}
+
 .heading-block { margin-bottom: 50px; }
 
 .heading-block h1,
@@ -10923,12 +10943,12 @@ label.error { display: none !important; }
 	display: block;
 	margin-top: 30px;
 	width: 40px;
-	border-top: 2px solid #444;
+	border-top: 2px solid #f38181;
 }
 
 .center .heading-block:after,
 .heading-block.center:after,
-.heading-block.title-center:after { margin: 30px auto 0; }
+.heading-block.title-center:after { margin: 20px auto 0; }
 
 .tright .heading-block,
 .heading-block.tright,
@@ -11948,6 +11968,37 @@ body:not(.device-touch) .tagcloud a {
 }
 
 .widget .testimonial p { font-size: 14px; }
+
+
+div.test-image {
+    width:20%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.test-content hr {
+    border:1px solid #f38181;
+    margin:5px 5px;
+    width:15%;
+}
+
+div.test-content {
+    width:75%;
+    display: inline-block;
+    font-size:1.1em;
+    margin:5px 0px 0px 5px;
+    color:#444;
+}
+
+div.test-content .heading {
+    font-weight:bold;
+    font-size:1.3em;
+}
+
+div.test-image img {
+/*    width:20%;*/
+}
+
 
 
 /* Widget - Quick Contact Form
