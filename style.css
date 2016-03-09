@@ -13312,3 +13312,50 @@ body:not(.no-transition) #wrapper,
 	padding:0!important
 }
 
+
+.mc-market.thumbnail .caption h3  {
+    font-size:.9em;
+}
+
+.mc-market-full.thumbnail .caption h3 {
+    font-size:1em;
+}
+
+.mc-market.thumbnail {
+        cursor:hand;
+}
+
+.mc-market-full.thumbnail {
+    display:none;
+    box-shadow: 0 5px 15px gray;
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #eee;
+    left: 0px;
+    padding: 0px;
+    position: absolute;
+    top: -80px;
+/*    overflow: hidden;*/
+    z-index: 900;    
+    cursor:hand;
+    width:200px;
+}
+
+.mc-market.thumbnail img {
+    border:1px solid #dddddd !important;
+}
+
+.mc-market-full.thumbnail div#stars img {
+    width:.95em;
+}
+
+.mc-market.thumbnail .caption {
+    padding-left:3px;
+    padding-right:3px;
+}
+
+
+
+
+
+
+

@@ -37,7 +37,7 @@
         display: none;
       }
   </style>    
-    
+
     
 	<!-- External JavaScripts
 	============================================= -->
@@ -46,81 +46,39 @@
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     <script>
-  $(function() {
-    var progressTimer,
-      progressbar = $( "#progressbar" ),
-      progressLabel = $( ".progress-label" ),
-      dialogButtons = [{
-        text: "Cancel Upload",
-        click: closeUpload
-      }],
-      dialog = $( "#dialog" ).dialog({
-        autoOpen: false,
-        closeOnEscape: false,
-        resizable: false,
-        buttons: dialogButtons,
-        open: function() {
-          progressTimer = setTimeout( progress, 2000 );
-        },
-        beforeClose: function() {
-          uploadButton.button( "option", {
-            disabled: false,
-            label: "Start Upload"
-          });
-        }
-      }),
-      uploadButton = $( "#uploadButton" )
-        .button()
-        .on( "click", function() {
-          $( this ).button( "option", {
-            disabled: true,
-            label: "Uploading..."
-          });
-          dialog.dialog( "open" );
-        });
- 
-    progressbar.progressbar({
-      value: false,
-      change: function() {
-        progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
-      },
-      complete: function() {
-        progressLabel.text( "Upload Complete!" );
-        dialog.dialog( "option", "buttons", [{
-          text: "Close",
-          click: closeUpload
-        }]);
-        $(".ui-dialog button").last().focus();
-      }
+    
+    
+    $(function(){
+
+        $(".mc-market.thumbnail").mouseover(
+            function(event) {
+                var hover = $(this).next(".mc-market-full");
+                if (!hover.hasClass("active")) {
+                    hover.css("display","block").addClass("active");
+                }
+            }
+        );
+
+        
+        $(".mc-market-full.thumbnail").mouseout(
+            
+            function(event) {
+                $(this).removeClass("active").css("display", "none");
+            }
+        );
+        
+
     });
- 
-    function progress() {
-      var val = progressbar.progressbar( "value" ) || 0;
- 
-      progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
- 
-      if ( val <= 99 ) {
-        progressTimer = setTimeout( progress, 50 );
-      }
-    }
- 
-    function closeUpload() {
-      clearTimeout( progressTimer );
-      dialog
-        .dialog( "option", "buttons", dialogButtons )
-        .dialog( "close" );
-      progressbar.progressbar( "value", false );
-      progressLabel
-        .text( "Starting upload..." );
-      uploadButton.focus();
-    }
-  });
-  </script>
+    
+    
+    
+    </script>
+
     
     
 	<!-- Document Title
 	============================================= -->
-	<title>ItMakesCents | Learn: Math Monitizing Marketplace</title>
+	<title>ItMakesCents | Learn: Math Monitizing Marketplace - Marketplace</title>
 
 </head>
 
@@ -144,7 +102,7 @@
 					============================================= -->
 					<div id="logo">
 						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/mc-logo.png" alt="ItMakesCents Logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+<!--						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>-->
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -162,12 +120,15 @@
 
 						<!-- Top Search
 						============================================= -->
+<!--
 						<div id="top-search">
 							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
 							<form action="search.html" method="get">
 								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
 							</form>
-						</div><!-- #top-search end -->
+						</div>
+-->
+                        <!-- #top-search end -->
 
 					</nav><!-- #primary-menu end -->
 
@@ -177,55 +138,194 @@
 
 		</header><!-- #header end -->
 
-<!--
-		<section id="slider" class="slider-parallax" style="background: url('images/slider/full/1.jpg'); background-size: cover;" data-height-lg="670" data-height-md="500" data-height-sm="400" data-height-xs="250" data-height-xxs="200">
-			<div class="container clearfix">
-				<div class="vertical-middle center">
-
-					<div class="heading-block nobottomborder center">
-						<h1>
-							<div class="text-rotater" data-separator="|" data-rotate="flipInX" data-speed="3500">
-								It Makes <span class="t-rotate">Dollars|Cents|Bank|Stacks|Guap</span>
-							</div>
-						</h1>
-					</div>
-
-				</div>
-			</div>
-		</section>
--->
 
 		<!-- Content
 		============================================= -->
-		<section id="content">
+		<section id="content bottommargin">
 
             <div class="content-wrap">
 
                 <div class="container center clearfix">
 
-                    <div class="heading-block center">
+                    <div class="heading-block center" style="margin-bottom:30px">
                         <h1>Marketplace</h1>
-                        
-                        <span>Looking to bring mathematics to life in your classroom?</span>
-                        <h2>Find it on it Makes Cent$</h2>
-                        <span>Browse. Buy. Engage. </span>
-                        <form>
-                        Search Site:<br>
-                        <input type="text" name="What are you looking for?">
-        <br>
-                        <a href="index.html"  class="btn btn-default topmargin-sm" class="center" >&lArr; Search</a>
-                         <br>
+<!--
+                        <span>Looking to bring mathematics to life in your classroom?<br/>
+                        Find it on it Makes Cent$<br/>
+                            Browse. Buy. Engage. 
+                        </span>
+-->
+                    </div>
+                        <span style="text-align:center;font-size:24px;font-weight:300; display:block;margin-bottom:20px">Looking to bring mathematics to life in your classroom?<br/>
+                        Find it here on It Makes Cent$<br/>
+                            Browse. Buy. Engage. 
+                        </span>
+
+                    <form>
+                        Search Site: &nbsp; <input type="text"  />&nbsp;
+                            <a href="javascript:;"  class="btn btn-default" >Search</a>
                         </form>
                     
-                    </div>
-<br>
-<button class="btn btn-default topmargin-sm">Highest Rated By Teachers</button>
-<button class="btn btn-default topmargin-sm">4px</button>
-<br>
-                    <a href="index.html" class="btn btn-default topmargin-sm" class ="center">&lArr; Back to home</a>
+<!--<button class="btn btn-default topmargin-sm bottommargin">Highest Rated By Teachers</button>-->
 
                 </div>
 
+                <div class="container center clearfix bottommargin">
+                
+                    <div class="row ">
+
+                        <div class="col-sm-2 col-md-2">
+                        <div class="mc-market thumbnail ">
+                          <img src="images/algebra-made-easy-150x150.png" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Algebra Made Easy</h3>
+<!--
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+-->
+                          </div>
+                        </div>
+                        <div class="mc-market-full thumbnail">
+                          <img src="images/algebra-made-easy-250x250.png"  height="200" width="200" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Algebra Made Easy</h3>
+                            Foundations of Algebra - Number Sense and Quantity<br>
+                            Students will analyze number relationships
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="stars"><img src="images/star-icon.png"/><img src="images/star-icon.png"/><img src="images/star-icon.png"/></div>
+                          <div class="col-md-6 bottommargin-sm" id="cost" >$10.00</div>
+                        </div>
+
+                        </div>
+
+                        <div class="col-sm-2 col-md-2">
+                        <div class="mc-market thumbnail">
+                          <img src="images/math-rap-2-150x150.png" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Math Rap</h3>
+                          </div>
+                        </div>
+                        <div class="mc-market-full thumbnail">
+                          <img src="images/math-rap-2-200x200.png"  height="200" width="200" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Math Rap</h3>
+                            Algebra I - The Real Number System - Exponent Rules<br>
+                            Rewrite expressions involving radicals and rational exponents using the properties of exponents.
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="stars">
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="cost" >$15.00</div>
+                        </div>                            
+                      </div>
+
+                        <div class="col-sm-2 col-md-2">
+                        <div class="mc-market thumbnail">
+                          <img src="images/flocabulary-150x150.png" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Flocabulary</h3>
+<!--
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+-->
+                          </div>
+                        </div>
+                        <div class="mc-market-full thumbnail">
+                          <img src="images/flocabulary-200x200.png"  height="200" width="200" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Flocabulary</h3>
+                            Foundations of Algebra - Arithmetic to Algebra - Order of Operations<br>
+                            Students will generate and interpret equivalent numeric and algebraic expressions.
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="stars">
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="cost" >$15.00</div>
+                        </div>                            
+                        </div>
+                        
+                        <div class="col-sm-2 col-md-2">
+                        <div class="mc-market thumbnail">
+                          <img src="images/beautiful-dance-moves-150x150.png" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Beautiful Dance Moves</h3>
+                          </div>
+                        </div>
+                        <div class="mc-market-full thumbnail">
+                          <img src="images/beautiful-dance-moves-200x200.png"  height="200" width="200" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Beautiful Dance Moves</h3>
+                            Foundations of Algebra - Arithmetic to Algebra - Order of Operations<br>
+                            Students will generate and interpret equivalent numeric and algebraic expressions.
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="stars">
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="cost" >$5.00</div>
+                        </div>                            
+                        </div>
+
+                        <div class="col-sm-2 col-md-2">
+                        <div class="mc-market thumbnail">
+                          <img src="images/numbers-200x200.png" height="150" width="150" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Numbers</h3>
+                          </div>
+                        </div>
+                        <div class="mc-market-full thumbnail">
+                          <img src="images/numbers-200x200.png"  height="200" width="200" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Numbers</h3>
+                            Foundations of Algebra - Arithmetic to Algebra - Order of Operations<br>
+                            Students will generate and interpret equivalent numeric and algebraic expressions.
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="stars">
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="cost" >$20.00</div>
+                        </div>                            
+                        </div>
+                        
+                        <div class="col-sm-2 col-md-2">
+                        <div class="mc-market thumbnail">
+                          <img src="images/money-man-200x200.png" height="150" width="150" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Money Man</h3>
+                          </div>
+                        </div>
+                        <div class="mc-market-full thumbnail">
+                          <img src="images/money-man-200x200.png"  height="200" width="200" alt="It Makes Cents - Student Project">
+                          <div class="caption">
+                            <h3>Money Man</h3>
+                            Foundations of Algebra - Arithmetic to Algebra - Order of Operations<br>
+                            Students will generate and interpret equivalent numeric and algebraic expressions.
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="stars">
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                              <img src="images/star-icon.png"/>
+                          </div>
+                          <div class="col-md-6 bottommargin-sm" id="cost" >$5.00</div>
+                        </div>                            
+                        </div>
+                    
+                    </div>                
+
+                    
+                    
+                </div>
+                
             </div>
 
 		</section><!-- #content end -->
@@ -269,23 +369,6 @@
 
 						<div class="col_one_third">
 
-<!--
-							<div class="widget widget_links clearfix">
-
-								<h4>Blogroll</h4>
-
-								<ul>
-									<li><a href="http://codex.wordpress.org/">Documentation</a></li>
-									<li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-									<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
-									<li><a href="http://wordpress.org/support/">Support Forums</a></li>
-									<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
-									<li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
-									<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
-								</ul>
-
-							</div>
--->
 
 						</div>
 
