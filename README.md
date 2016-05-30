@@ -1,12 +1,8 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+<h1> It Makes Cent$ </h1>
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+<p> It Makes Cent$ is a web application that allows students to upload an educational video, and get paided for it by their teachers </p>
 
 ### How do I get set up? ###
 
